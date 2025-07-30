@@ -89,6 +89,4 @@
 </div>
 @endsection
 
-@section('script')
-<!-- Optional: Include any DataTables or interactive JS here -->
-@endsection
+

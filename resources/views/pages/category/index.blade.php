@@ -1,10 +1,6 @@
 @extends('layouts.master')
 @section('title','Manage Category')
 
-@section('style')
-<!-- Optional additional styles -->
-@endsection
-
 
 <!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -57,8 +53,4 @@
 <div class="d-flex justify-content-center mt-2">
     {{ $categorys->links('vendor.pagination.bootstrap-4') }}
 </div>
-@endsection
-
-@section('script')
-<!-- Optional custom scripts -->
 @endsection

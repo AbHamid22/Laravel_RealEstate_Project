@@ -40,18 +40,17 @@ class PropertyController extends Controller
             'photo' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
         ]);
 
-        // Create property instance
+       
         $property = new Property($validated);
 
-        // Save to assign an ID first
+       
         $property->save();
 
-        // Handle photo upload after save
+       
         if ($request->hasFile('photo')) {
             $imageName = $property->id . '.' . $request->photo->extension();
             $request->photo->move(public_path('img/properties'), $imageName);
 
-            // Update photo field and save
             $property->photo = $imageName;
             $property->save();
         }

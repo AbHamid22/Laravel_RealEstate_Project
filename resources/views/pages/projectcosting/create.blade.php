@@ -68,7 +68,7 @@
                 <textarea name="remarks" id="remarks" class="form-control" rows="3"></textarea>
             </div>
 
-            <!-- Calculated cost display -->
+     
             <div class="mb-3">
                 <label class="form-label">Total Cost</label>
                 <input type="text" id="total_cost" class="form-control" readonly>
@@ -90,7 +90,7 @@
         const budget = parseFloat(budgetInput.value) || 0;
         const actualCost = parseFloat(actualCostInput.value) || 0;
 
-        // Example calculation: sum of budget + actual cost
+        
         const total = budget + actualCost;
 
         totalCostInput.value = total.toFixed(2);
@@ -99,7 +99,7 @@
     budgetInput.addEventListener('input', calculateTotalCost);
     actualCostInput.addEventListener('input', calculateTotalCost);
 
-    // Initialize on page load
+   
     calculateTotalCost();
 </script>
 @endsection

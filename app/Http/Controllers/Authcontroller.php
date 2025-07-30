@@ -13,7 +13,7 @@ class Authcontroller extends Controller
        return view('pages.auth.login');
     }
     public function Authlogin(Request $request){
-        // $remember=!empty($request-remember)?true:false;
+  
         if(Auth::attempt(['name'=>$request->name,'password'=>$request->password],true)){
             return redirect('home');
         }else{

@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class ProjectCosting extends Model
 {
-    // If your table name follows Laravel's convention (project_costings), this is not needed
+    
     protected $table = 'project_costings';
 
-    // If you're using mass assignment (e.g., $request->all())
+  
     protected $fillable = [
         'project_id',
         'module_id',
@@ -22,7 +22,7 @@ class ProjectCosting extends Model
         'updated_by',
     ];
 
-    // Relationships
+
     public function project()
     {
         return $this->belongsTo(Project::class);

@@ -70,6 +70,4 @@
 </div>
 @endsection
 
-@section('script')
-<!-- Optional JavaScript or extra interactions can go here -->
-@endsection
+

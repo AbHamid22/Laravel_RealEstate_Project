@@ -22,34 +22,19 @@ class StockController extends Controller
 		$stocks = Stock::with(['product', 'uom', 'transactionType', 'warehouse'])->paginate(5);
 		return view("pages.stock.index", ["stocks" => $stocks]);
 	}
-	// public function balance(Request $request)
-	// {
-	// 	// Regular paginated stock entries
-	// 	// $stocks = Stock::with(['product', 'uom', 'transactionType', 'warehouse'])->paginate(5);
 
-	// 	// Custom stock summary: total qty per product
-	// 	$summary = DB::table('stocks')
-	// 		->join('products', 'products.id', '=', 'stocks.product_id')
-	// 		->join('transaction_types', 'transaction_types.id', '=', 'stocks.transaction_type_id')
-	// 		->select('products.id', 'products.name as product', DB::raw('SUM(laravel_stocks.qty) as total'))
-	// 		->groupBy('stocks.product_id','products.id', 'products.name')
-	// 		->get();
-
-	// 	// Pass both to the view
-	// 	return view("pages.stock.balance", ["summary" => $summary]);
-	// }
 public function balance(Request $request)
 {
-    // Stock summary: total qty per product and UOM
+    
     $summary = DB::table('stocks')
         ->join('products', 'products.id', '=', 'stocks.product_id')
         ->join('transaction_types', 'transaction_types.id', '=', 'stocks.transaction_type_id')
-        ->join('uoms', 'uoms.id', '=', 'stocks.uom_id') // Add join for UOM
+        ->join('uoms', 'uoms.id', '=', 'stocks.uom_id') 
         ->select(
             'products.id',
             'products.name as product',
-            'uoms.name as uom', // Include UOM name or use 'uoms.symbol' if available
-            DB::raw('SUM(laravel_stocks.qty) as total') // Note: changed from 'laravel_stocks' to 'stocks'
+            'uoms.name as uom', 
+            DB::raw('SUM(laravel_stocks.qty) as total')
         )
         ->groupBy('stocks.product_id', 'products.id', 'products.name', 'uoms.name')
         ->get();
@@ -135,7 +120,7 @@ public function balance(Request $request)
 			'project_id' => 'required|exists:projects,id',
 		]);
 
-		// Check if enough stock exists
+	
 		$currentStock = \App\Models\Stock::where('product_id', $request->product_id)
 			->where('uom_id', $request->uom_id)
 			->where('warehouse_id', $request->warehouse_id)
@@ -148,7 +133,7 @@ public function balance(Request $request)
 		$stock = new \App\Models\Stock;
 		$stock->product_id = $request->product_id;
 		$stock->uom_id = $request->uom_id;
-		$stock->qty = -abs($request->qty); // Negative for stock out
+		$stock->qty = -abs($request->qty); 
 		$stock->transaction_type_id = \App\Models\TransactionType::where('name', 'Issue')->value('id') ?? 2; // Use 'Issue' type
 		$stock->warehouse_id = $request->warehouse_id;
 		$stock->project_id = $request->project_id;

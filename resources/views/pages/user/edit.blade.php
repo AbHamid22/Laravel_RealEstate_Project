@@ -1,6 +1,4 @@
-<?php
 
-?>
 @extends('layouts.master')
 @section('title','Edit User')
 @section('style')

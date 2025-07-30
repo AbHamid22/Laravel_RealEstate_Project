@@ -193,16 +193,7 @@ $uoms = Uom::all();
             <div id="vendor-info" class="mt-2 text-sm text-gray-600"></div>
         </div>
 
-        <!-- <div class="col-md-4 invoice-col form-group">
-            <label>Vendor</label>
-            <select name="vendor_id" id="vendor_id" class="form-control">
-                <option value="select">Select Vendor</option>
-                @foreach($vendors as $vendor)
-                <option value="{{ $vendor->id }}">{{ $vendor->name }}</option>
-                @endforeach
-            </select>
-            <div id="vendor-info" class="mt-2"></div>
-        </div> -->
+       
 
         <div class="col-md-4 invoice-col">
             <table class="table table-sm table-borderless">
@@ -272,8 +263,7 @@ $uoms = Uom::all();
     <div class="row mt-4">
         <div class="col-md-8">
             <div class="form-group">
-                <!-- <label class="address-title">Remark</label>
-                <textarea id="txtRemark" class="form-control"></textarea> -->
+          
             </div>
         </div>
 
@@ -450,7 +440,7 @@ $uoms = Uom::all();
 
 
     document.querySelector("#btnProcess").addEventListener("click", function() {
-        // Form validation
+ 
         const warehouseId = document.querySelector("#warehouse_id").value;
         const vendorId = document.querySelector("#vendor_id").value;
         const purchaseDate = document.querySelector("#txtPurchaseDate").value;

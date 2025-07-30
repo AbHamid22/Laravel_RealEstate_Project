@@ -13,9 +13,7 @@
 </head> 
 @section('title', 'Create Stock Transfer')
 
-@section('style')
-<!-- You can add custom styles here if needed -->
-@endsection
+
 
 @section('page')
 <div class="container mt-5">
@@ -74,8 +72,4 @@
         </div>
     </div>
 </div>
-@endsection
-
-@section('script')
-<!-- Optional: Add validation or custom JS here -->
 @endsection

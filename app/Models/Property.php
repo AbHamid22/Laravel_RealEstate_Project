@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Property extends Model
 {
-    protected $table = 'properties'; // Optional if you use Laravel conventions
+    protected $table = 'properties'; 
 
-    // Fillable fields to allow mass assignment safely
+  
     protected $fillable = [
         'title',
         'description',
@@ -20,16 +20,15 @@ class Property extends Model
         'price',
         'status',
         'location',
-        'photo',  // for image filename
+        'photo', 
     ];
 
-    // Relationship: Property belongs to Category
     public function category()
     {
         return $this->belongsTo(Category::class);
     }
 
-    // Relationship: Property belongs to Project
+
     public function project()
     {
         return $this->belongsTo(Project::class);

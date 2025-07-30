@@ -15,14 +15,14 @@ use Illuminate\Support\Facades\Validator;
 
 class StockController extends Controller
 {
-    // List paginated stocks
+
     public function index()
     {
         $stocks = Stock::with(['product', 'uom', 'transactionType', 'warehouse'])->paginate(10);
         return response()->json($stocks);
     }
 
-    // Show single stock
+
     public function show($id)
     {
         $stock = Stock::with(['product', 'uom', 'transactionType', 'warehouse'])->find($id);
@@ -34,7 +34,7 @@ class StockController extends Controller
         return response()->json($stock);
     }
 
-    // Store new stock
+ 
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -55,7 +55,7 @@ class StockController extends Controller
         return response()->json(['message' => 'Created Successfully.', 'data' => $stock], 201);
     }
 
-    // Update stock
+   
     public function update(Request $request, $id)
     {
         $stock = Stock::find($id);
@@ -82,7 +82,7 @@ class StockController extends Controller
         return response()->json(['message' => 'Updated Successfully.', 'data' => $stock]);
     }
 
-    // Delete stock
+    
     public function destroy($id)
     {
         $stock = Stock::find($id);
@@ -118,7 +118,7 @@ class StockController extends Controller
 
 
 
-    // Issue stock to a project
+
     public function issue(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -158,7 +158,7 @@ class StockController extends Controller
         return response()->json(['message' => 'Stock issued successfully.', 'data' => $stock]);
     }
 
-    // Manage all issues
+
     public function manageIssues()
     {
         $issueTypeId = TransactionType::where('name', 'Issue')->value('id') ?? 2;

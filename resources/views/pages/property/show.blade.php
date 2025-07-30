@@ -1,10 +1,6 @@
 @extends('layouts.master')
 @section('title', 'Show Property')
 
-@section('style')
-<!-- Add custom styles here if needed -->
-@endsection
-
 @section('page')
 <a class="btn btn-success mb-3" href="{{ route('propertys.index') }}">← Back to List</a>
 
@@ -35,8 +31,4 @@
         </div>
     </div>
 </div>
-@endsection
-
-@section('script')
-<!-- Add custom scripts here if needed -->
 @endsection

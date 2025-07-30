@@ -16,11 +16,6 @@ use Illuminate\Pagination\Paginator;
 
 class PurchaseController extends Controller
 {
-	// public function index()
-	// {
-	// 	$purchases = Purchase::with(['vendor', 'warehouse', 'status'])->orderBy('id', 'desc')->paginate(5);
-	// 	return view("pages.purchase.index", ["purchases" => $purchases]);
-	// }
 
 	public function index(Request $request)
 	{
@@ -74,10 +69,6 @@ class PurchaseController extends Controller
 
 		return back()->with('success', 'Created Successfully.');
 	}
-	// public function show($id){
-	// 	$purchase = Purchase::find($id);
-	// 	return view("pages.purchase.show",["purchase"=>$purchase]);
-	// }
 
 	public function show($id)
 	{

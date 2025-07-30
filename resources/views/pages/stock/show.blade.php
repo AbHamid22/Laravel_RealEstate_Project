@@ -114,12 +114,8 @@
                 </div>
             </div>
 
-        </div> <!-- card-body -->
-    </div> <!-- card -->
+        </div>
+    </div> 
 
 </div>
-@endsection
-
-@section('script')
-<!-- Additional JS if needed -->
 @endsection

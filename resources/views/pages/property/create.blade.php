@@ -215,9 +215,7 @@
                             @error('photo')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
-                            <!-- <div class="preview-image-container mt-3">
-                                <img id="image-preview" class="preview-image" alt="Property Preview">
-                            </div> -->
+                         
                         </div>
                     </div>
 
@@ -257,14 +255,14 @@
 
 @section('script')
 <script>
-    // Image preview functionality
+    
     function previewImage(input) {
         const preview = document.getElementById('image-preview');
         const file = input.files[0];
         const maxSize = 5 * 1024 * 1024; // 5MB
         
         if (file) {
-            // Check file size
+        
             if (file.size > maxSize) {
                 alert('File size exceeds 5MB limit');
                 input.value = '';
@@ -286,7 +284,7 @@
         }
     }
 
-    // Character counter for description
+
     document.getElementById('description').addEventListener('input', function() {
         const maxLength = 1000;
         const currentLength = this.value.length;
@@ -301,18 +299,18 @@
         }
     });
 
-    // Initialize description counter on page load
+  
     document.addEventListener('DOMContentLoaded', function() {
         const desc = document.getElementById('description');
         const remaining = 1000 - desc.value.length;
         document.getElementById('description-counter').textContent = remaining;
     });
 
-    // Form validation with better error handling
+
     document.getElementById('property-form').addEventListener('submit', function(e) {
         let isValid = true;
         
-        // Clear previous error highlights
+    
         this.querySelectorAll('.is-invalid').forEach(el => {
             el.classList.remove('is-invalid');
             const errorDiv = el.nextElementSibling;
@@ -321,7 +319,7 @@
             }
         });
         
-        // Validate required fields
+   
         this.querySelectorAll('[required]').forEach(field => {
             if (!field.value.trim()) {
                 isValid = false;
@@ -330,13 +328,12 @@
                 const errorDiv = document.createElement('div');
                 errorDiv.className = 'invalid-feedback';
                 errorDiv.textContent = 'This field is required';
-                
-                // Insert after the field
+             
                 field.parentNode.insertBefore(errorDiv, field.nextSibling);
             }
         });
         
-        // Validate file upload
+  
         const fileInput = document.getElementById('photo');
         if (fileInput.files.length === 0) {
             isValid = false;
@@ -351,7 +348,7 @@
         if (!isValid) {
             e.preventDefault();
             
-            // Scroll to the first error
+   
             const firstError = this.querySelector('.is-invalid');
             if (firstError) {
                 firstError.scrollIntoView({
@@ -359,7 +356,7 @@
                     block: 'center'
                 });
                 
-                // Focus on the first error field
+   
                 if (firstError.tagName === 'INPUT' || firstError.tagName === 'SELECT' || firstError.tagName === 'TEXTAREA') {
                     firstError.focus();
                 }
@@ -367,20 +364,19 @@
         }
     });
 
-    // Initialize Google Places Autocomplete for location
+
     function initAutocomplete() {
         if (typeof google !== 'undefined') {
             const input = document.getElementById('location');
             const autocomplete = new google.maps.places.Autocomplete(input, {
                 types: ['geocode'],
-                componentRestrictions: {country: 'us'} // Change to your country code
+                componentRestrictions: {country: 'us'} 
             });
             
             autocomplete.addListener('place_changed', function() {
                 const place = autocomplete.getPlace();
                 if (!place.geometry) {
-                    // User entered the name of a Place that was not suggested and
-                    // pressed the Enter key, or the Place Details request failed.
+                
                     console.log("No details available for input: '" + place.name + "'");
                     return;
                 }
@@ -388,7 +384,7 @@
         }
     }
     
-    // Load Google Places API
+
     function loadGoogleMapsAPI() {
         const script = document.createElement('script');
         script.src = `https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=initAutocomplete`;
@@ -397,7 +393,6 @@
         document.head.appendChild(script);
     }
     
-    // Uncomment to enable Google Places autocomplete
-    // document.addEventListener('DOMContentLoaded', loadGoogleMapsAPI);
+
 </script>
 @endsection

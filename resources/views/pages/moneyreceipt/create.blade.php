@@ -188,7 +188,7 @@ $company = Company::find(1);
         cart.push({
             id: Date.now(),
             desc: propertyName,
-            project: "", // Optional if you want to look up later
+            project: "", 
             project_id: projectId,
             property_id: propertyId,
             discount,

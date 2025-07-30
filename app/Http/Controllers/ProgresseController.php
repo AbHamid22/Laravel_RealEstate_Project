@@ -10,17 +10,12 @@ use Illuminate\Http\Request;
 
 class ProgresseController extends Controller
 {
-	// public function index()
-	// {
-	// 	$progresses = Progress::with('module', 'project')->get();
-	// 	return view("pages.progress.index", compact('progresses'));
-	// }
 
 	public function index()
 	{
 		$progresses = Progress::with(['module', 'project','status'])
 			->orderBy('created_at', 'desc')
-			->paginate(4); // You can change the number per page
+			->paginate(4);
 
 		return view('pages.progress.index', compact('progresses'));
 

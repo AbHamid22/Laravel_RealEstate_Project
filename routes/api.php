@@ -37,7 +37,7 @@ Route::apiResources([
     'orders' => OrderController::class,
     'invoices' => InvoiceController::class,
     'moneyreceipts' => MoneyReceiptController::class,
-    
+
 
     'properties' => PropertyController::class,
     'vendors' => VendorController::class,
@@ -55,4 +55,3 @@ Route::apiResources([
     'projectcostings' => ProjectCostingController::class,
 
 ]);
-

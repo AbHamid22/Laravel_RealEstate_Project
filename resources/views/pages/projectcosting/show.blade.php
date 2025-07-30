@@ -50,8 +50,6 @@
 
 <a class="btn btn-success mb-3" href="{{ route('projectcostings.index') }}">Manage Project Costings</a>
 
-<!-- Project Details Card -->
-<!-- Make sure Bootstrap Icons CSS is loaded in your master layout -->
 
 
 <div class="card project-card shadow" style="border: none; border-radius: 12px; background: linear-gradient(to right, #f0f8ff, #e0f7fa);">
@@ -118,8 +116,4 @@ $difference = $budget - $actual;
 	</div>
 </div>
 
-@endsection
-
-@section('script')
-<!-- Optional JS -->
 @endsection

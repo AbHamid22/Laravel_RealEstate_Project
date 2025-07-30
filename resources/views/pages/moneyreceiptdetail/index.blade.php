@@ -1,13 +1,9 @@
 @extends('layouts.master')
 @section('title','Manage MoneyReceiptDetail')
 
-@section('style')
-<!-- Optional custom styles -->
-@endsection
 
-<!-- Bootstrap 5 -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<!-- Bootstrap Icons -->
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
 
@@ -56,6 +52,3 @@
 </div>
 @endsection
 
-@section('script')
-<!-- Optional scripts -->
-@endsection

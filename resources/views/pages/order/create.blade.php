@@ -57,11 +57,7 @@ $company = Company::find(1);
             </select>
             <div id="customer-info" class="mt-2"></div>
 
-            <!-- <div class="form-group mt-3">
-                <label class="address-title">Shipping Address</label>
-                <textarea id="txtShippingAddress" class="form-control"></textarea>
-            </div> -->
-        </div>
+                 </div>
 
         <div class="col-sm-4 invoice-col">
             <table>
@@ -184,7 +180,7 @@ $company = Company::find(1);
         cart.push(item);
         printCart();
 
-        // Clear input fields after adding
+      
         document.querySelector("#txtPrice").value = "";
         document.querySelector("#flat_no").value = "";
         document.querySelector("#txtDiscount").value = "";
@@ -225,7 +221,7 @@ $company = Company::find(1);
 
     function del(id) {
         cart = cart.filter(item => item.id !== id);
-        // Reassign IDs
+    
         cart.forEach((item, index) => item.id = index + 1);
         printCart();
     }

@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     function index(){
-        $customers = \App\Models\Sales\Customer::all();
+        $customers = \App\Models\Customer::all();
         $productsCount = \App\Models\Product::count();
         $vendorsCount = \App\Models\Vendor::count();
         $ordersCount = \App\Models\Order::count();
@@ -70,7 +70,7 @@ class HomeController extends Controller
         }
         
         // Recent data for highlighting
-        $recentCustomers = \App\Models\Sales\Customer::all();
+        $recentCustomers = \App\Models\Customer::all();
         $recentInvoices = \App\Models\Invoice::latest()->take(5)->get();
         $recentPurchases = \App\Models\Purchase::with(['vendor', 'warehouse', 'status'])->latest()->take(5)->get();
         $recentPurchaseDetails = \App\Models\PurchaseDetail::with(['purchase', 'product', 'uom'])->latest()->take(5)->get();

@@ -57,7 +57,3 @@
 	<button type="submit" class="btn btn-primary">Save Change</button>
 </form>
 @endsection
-@section('script')
-
-
-@endsection

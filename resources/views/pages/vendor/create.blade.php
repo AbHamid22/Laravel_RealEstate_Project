@@ -1,9 +1,6 @@
 @extends('layouts.master')
 @section('title','Create Vendor')
-@section('style')
 
-
-@endsection
 @section('page')
 <a class='btn btn-success' href="{{route('vendors.index')}}">Manage</a>
 <form action="{{route('vendors.store')}}" method ="post" enctype="multipart/form-data">

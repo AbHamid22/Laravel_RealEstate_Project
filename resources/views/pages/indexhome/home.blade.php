@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Sales\Customer;
+use App\Models\Customer;
 
 $customers = Customer::all();
 
@@ -16,17 +16,7 @@ $customers = Customer::all();
 
     <!-- Stat Cards -->
     <div class="row g-4 mb-5">
-        <!-- <div class="col-6 col-md-4 col-lg-2">
-            <div class="card shadow-sm border-0 h-100 text-center hover-shadow">
-                <div class="card-body">
-                    <div class="mb-2">
-                        <i class="fas fa-dollar-sign fa-2x text-success"></i>
-                    </div>
-                    <h4 class="fw-bold mb-0">${{ number_format($totalRevenue, 0) }}</h4>
-                    <small class="text-muted">Total Revenue</small>
-                </div>
-            </div>
-        </div> -->
+    
         <div class="col-6 col-md-4 col-lg-2">
             <div class="card shadow-sm border-0 h-100 text-center hover-shadow">
                 <div class="card-body">
@@ -83,17 +73,7 @@ $customers = Customer::all();
                 </div>
             </div>
         </div>
-        <!-- <div class="col-6 col-md-4 col-lg-2">
-            <div class="card shadow-sm border-0 h-100 text-center hover-shadow">
-                <div class="card-body">
-                    <div class="mb-2">
-                        <i class="fas fa-shopping-cart fa-2x text-warning"></i>
-                    </div>
-                    <h4 class="fw-bold mb-0">{{ $ordersCount }}</h4>
-                    <small class="text-muted">Orders</small>
-                </div>
-            </div>
-        </div> -->
+    
         <div class="col-6 col-md-4 col-lg-2">
             <div class="card shadow-sm border-0 h-100 text-center hover-shadow">
                 <div class="card-body">
@@ -227,30 +207,9 @@ $customers = Customer::all();
                 </div>
             </div>
         </div>
-        <!-- <div class="col-6 col-md-4 col-lg-2">
-            <div class="card shadow-sm border-0 h-100 text-center hover-shadow">
-                <div class="card-body">
-                    <div class="mb-2">
-                        <i class="fas fa-exclamation-triangle fa-2x text-danger"></i>
-                    </div>
-                    <h4 class="fw-bold mb-0">{{ $lowStockItems }}</h4>
-                    <small class="text-muted">Low Stock</small>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-2">
-            <div class="card shadow-sm border-0 h-100 text-center hover-shadow">
-                <div class="card-body">
-                    <div class="mb-2">
-                        <i class="fas fa-dollar-sign fa-2x text-info"></i>
-                    </div>
-                    <h4 class="fw-bold mb-0">${{ number_format($stockValue, 0) }}</h4>
-                    <small class="text-muted">Stock Value</small>
-                </div>
-            </div>
-        </div> -->
+     
     </div>
-    <!-- /Stat Cards -->
+
 
     
     <!-- Project Tracking Section -->

@@ -8,14 +8,14 @@ use Illuminate\Http\Request;
 
 class PurchaseController extends Controller
 {
-    // GET /api/purchases
+
     public function index()
     {
         $purchases = Purchase::with(['vendor', 'warehouse', 'status'])->paginate(10);
         return response()->json($purchases);
     }
 
-    // POST /api/purchases
+
     public function store(Request $request)
     {
         $purchase = Purchase::create([
@@ -36,14 +36,14 @@ class PurchaseController extends Controller
         ]);
     }
 
-    // GET /api/purchases/{id}
+
     public function show($id)
     {
         $purchase = Purchase::with(['vendor', 'warehouse', 'status'])->findOrFail($id);
         return response()->json($purchase);
     }
 
-    // PUT /api/purchases/{id}
+
     public function update(Request $request, $id)
     {
         $purchase = Purchase::findOrFail($id);
@@ -55,7 +55,7 @@ class PurchaseController extends Controller
         ]);
     }
 
-    // DELETE /api/purchases/{id}
+
     public function destroy($id)
     {
         $purchase = Purchase::findOrFail($id);

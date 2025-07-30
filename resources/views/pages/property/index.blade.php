@@ -30,7 +30,7 @@
         border-color: #dee2e6;
     }
 
-    /* Hide the previous/next arrows */
+
     .page-item:first-child,
     .page-item:last-child {
         display: none;
@@ -62,44 +62,6 @@
         </div>
     </div>
 </form>
-
-
-
-<!-- <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-    @foreach($propertys as $property)
-    <div class="col">
-        <div class="card h-100 shadow-sm">
-            <img src="{{ asset('img/'.$property->photo) }}" class="card-img-top" alt="Property Image" style="height:200px; object-fit:cover;">
-            <div class="card-body">
-                <h2 class="card-title">{{ $property->title }}</h2>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><strong>SQFT:</strong> {{ $property->sqft }}</li>
-                    <li class="list-group-item"><strong>Bed_Room:</strong> {{ $property->bed_room }}</li>
-                    <li class="list-group-item"><strong>Bath_Room:</strong> {{ $property->bath_room }}</li>
-                    <li class="list-group-item"><strong>Price:</strong> {{ number_format($property->price) }}</li>
-
-                    <li class="list-group-item"><strong>Location:</strong> {{ $property->location }}</li>
-                </ul>
-            </div>
-            <div class="card-footer d-flex justify-content-between">
-                <a class="btn btn-sm btn-primary" href="{{ route('propertys.show', $property->id) }}" title="View">
-                    <i class="fas fa-eye"></i>
-                </a>
-                <a class="btn btn-sm btn-success" href="{{ route('propertys.edit', $property->id) }}" title="Edit">
-                    <i class="fas fa-edit"></i>
-                </a>
-                <form action="{{ route('propertys.destroy', $property->id) }}" method="POST" onsubmit="return confirm('Are you sure?');">
-                    @csrf
-                    @method('DELETE')
-                    <button class="btn btn-sm btn-danger" type="submit" title="Delete">
-                        <i class="fas fa-trash-alt"></i>
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
-    @endforeach
-</div> -->
 
 @if($propertys->count() > 0)
 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">

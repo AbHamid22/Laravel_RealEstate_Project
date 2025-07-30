@@ -5,7 +5,7 @@
 <style>
     body {
         background-color: #f8f9fa;
-        /* Light gray background for app-like feel */
+     
     }
 
     .container {
@@ -120,7 +120,7 @@
         color: white !important;
     }
 
-    /* Smaller action buttons */
+
     .btn-sm {
         padding: 0.35rem 0.6rem;
         font-size: 0.85rem;

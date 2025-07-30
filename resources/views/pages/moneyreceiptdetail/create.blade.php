@@ -1,6 +1,4 @@
-<?php
 
-?>
 @extends('layouts.master')
 @section('title','Create MoneyReceiptDetail')
 @section('style')

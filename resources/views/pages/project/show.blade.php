@@ -68,7 +68,7 @@
 
 @section('script')
 <script>
-    // Optional JS to highlight card or interact on load
+  
     document.addEventListener("DOMContentLoaded", function () {
         const card = document.querySelector('.project-card');
         card.style.opacity = 0;

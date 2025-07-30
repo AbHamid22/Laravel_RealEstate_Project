@@ -1,9 +1,6 @@
 <?php
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Home\HomeController;
-use App\Http\Controllers\Sales\SalesInvoiceController;
-use App\Http\Controllers\Academystudent\AcademyStudentController;
-use App\Http\Controllers\AcademyTeacherController;
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\CategoryController;
@@ -57,12 +54,7 @@ Route::post('logout', [Authcontroller::class, 'logout'])->name('logout');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/home', [HomeController::class, 'index']);
-    // Route::get('/order/create', function() {
-    //     return view('pages.sales.order.create');
-    // });
-    // Route::get('/academystudents/{id}/confirm', [AcademyStudentController::class, 'confirm'])->name('academystudents.confirm');
-    Route::resource('academystudents', AcademyStudentController::class);
-    Route::resource('academyteachers', AcademyTeacherController::class);
+   
     Route::resource('propertys', PropertyController::class);
     Route::resource('categorys', CategoryController::class);
     Route::resource('agents', AgentController::class);
@@ -90,7 +82,6 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('stockadjustmentdetails', StockAdjustmentDetailController::class);
     Route::resource('stockadjustmenttypes', StockAdjustmentTypeController::class);
     Route::resource('users', UserController::class);
-    // Route::get("/sales/invoices",[SalesInvoiceController::class,'index']);
     Route::resource('orders', OrderController::class);
     Route::resource('orderdetails', OrderDetailController::class);
     Route::resource('moneyreceipts', MoneyReceiptController::class);

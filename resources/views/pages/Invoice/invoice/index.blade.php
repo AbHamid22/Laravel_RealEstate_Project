@@ -1,9 +1,6 @@
 @extends('layouts.master')
 @section('title','Manage Invoice')
 
-@section('style')
-<!-- Optional custom styles -->
-@endsection
 <!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -20,38 +17,7 @@
         </a>
     </div>
 
-    <!-- <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-        @foreach($invoices as $invoice)
-        <div class="col">
-            <div class="card shadow-sm border-0 rounded-4 h-100">
-                <div class="card-body">
-                    <h5 class="card-title">Invoice #{{ $invoice->id }}</h5>
-                    <p class="card-text mb-1"><strong>Customer:</strong> {{ $invoice->customer->name ?? 'N/A' }}</p>
-                    <p class="card-text mb-1"><strong>Total:</strong> {{ $invoice->total_amount }}</p>
-                    <p class="card-text mb-1"><strong>Status:</strong> {{ ucfirst($invoice->status) }}</p>
-                    <p class="card-text mb-1"><strong>Issue Date:</strong> {{ $invoice->issue_date }}</p>
-                    <p class="card-text"><strong>Due Date:</strong> {{ $invoice->due_date }}</p>
-                </div>
-                <div class="card-footer bg-transparent border-0 d-flex justify-content-between">
-                    <a href="{{ route('invoices.show', $invoice->id) }}" class="btn btn-sm btn-info">
-                        <i class="bi bi-eye"></i>
-                    </a>
-                    <a href="{{ route('invoices.edit', $invoice->id) }}" class="btn btn-sm btn-success">
-                        <i class="bi bi-pencil"></i>
-                    </a>
-                    <form action="{{ route('invoices.destroy', $invoice->id) }}" method="post" class="d-inline" onsubmit="return confirm('Are you sure you want to delete this invoice?')">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-sm btn-danger">
-                            <i class="bi bi-trash"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-        
-        @endforeach
-    </div> -->
+   
     <div class="row g-4">
         @foreach($invoices as $invoice)
         <div class="col-12 col-md-6 col-lg-4">
@@ -94,8 +60,4 @@
 <div class="d-flex justify-content-center mt-2">
     {{ $invoices->links('vendor.pagination.bootstrap-4') }}
 </div>
-@endsection
-
-@section('script')
-<!-- Optional JavaScript -->
 @endsection

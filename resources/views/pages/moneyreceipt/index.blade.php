@@ -1,9 +1,6 @@
 @extends('layouts.master')
 @section('title','Manage MoneyReceipt')
 
-@section('style')
-<!-- You may include custom CSS here if needed -->
-@endsection
 
 <!-- Bootstrap 5 -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -63,6 +60,3 @@
 </div>
 @endsection
 
-@section('script')
-<!-- Optional scripts -->
-@endsection

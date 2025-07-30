@@ -8,7 +8,7 @@ use App\Models\Vendor;
 use App\Models\Order;
 use App\Models\Invoice;
 use App\Models\Purchase;
-use App\Models\Sales\Customer;
+use App\Models\Customer;
 use App\Models\Property;
 use App\Models\Project;
 use App\Models\User;

@@ -82,7 +82,3 @@
     {{ $stocktranspers->links('vendor.pagination.bootstrap-4') }}
 </div>
 @endsection
-
-@section('script')
-<!-- Optional JavaScript here -->
-@endsection

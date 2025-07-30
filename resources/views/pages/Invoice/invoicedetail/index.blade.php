@@ -59,6 +59,3 @@
 </div>
 @endsection
 
-@section('script')
-<!-- Optional JavaScript -->
-@endsection

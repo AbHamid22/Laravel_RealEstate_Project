@@ -73,6 +73,3 @@
 </div>
 @endsection
 
-@section('script')
-<!-- Optional JavaScript validation or enhancement here -->
-@endsection

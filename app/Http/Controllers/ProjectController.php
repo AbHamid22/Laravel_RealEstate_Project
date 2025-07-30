@@ -92,9 +92,9 @@ class ProjectController extends Controller
 		}
 
 
-		// Check if project status is complete (assuming complete status_id = 3, adjust as needed)
+		
 		if ($request->status_id == 3) {
-			// Optional: avoid duplicating 100% progress if it already exists
+			
 			$existing = Progress::where('project_id', $project->id)->where('percent', 100)->first();
 			if (!$existing) {
 				$progress = new Progress();

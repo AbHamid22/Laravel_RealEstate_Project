@@ -10,14 +10,14 @@ use App\Models\Module;
 
 class ProjectCostingController extends Controller
 {
-    // GET /api/projectcostings
+
     public function index()
     {
         $projectcostings = ProjectCosting::with(['project', 'module'])->paginate(2);
         return response()->json($projectcostings);
     }
 
-    // POST /api/projectcostings
+  
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -40,7 +40,7 @@ class ProjectCostingController extends Controller
         ], 201);
     }
 
-    // GET /api/projectcostings/{id}
+
     public function show($id)
     {
         $projectcosting = ProjectCosting::with(['project', 'module'])->findOrFail($id);
@@ -48,7 +48,7 @@ class ProjectCostingController extends Controller
         return response()->json($projectcosting);
     }
 
-    // PUT /api/projectcostings/{id}
+  
     public function update(Request $request, $id)
     {
         $projectcosting = ProjectCosting::findOrFail($id);
@@ -73,7 +73,7 @@ class ProjectCostingController extends Controller
         ]);
     }
 
-    // DELETE /api/projectcostings/{id}
+
     public function destroy($id)
     {
         $projectcosting = ProjectCosting::findOrFail($id);

@@ -35,10 +35,6 @@ class InvoiceController extends Controller
         $invoice->issue_date = date('Y-m-d', strtotime($request->issue_date));
         $invoice->due_date = date('Y-m-d', strtotime($request->due_date));
 
-        // date_default_timezone_set("Asia/Dhaka");
-        // $invoice->created_at = date('Y-m-d H:i:s');
-        // date_default_timezone_set("Asia/Dhaka");
-        // $invoice->updated_at = date('Y-m-d H:i:s');
 
         $invoice->save();
 

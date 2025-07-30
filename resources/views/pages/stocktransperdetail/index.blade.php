@@ -1,9 +1,7 @@
 @extends('layouts.master')
 @section('title','Manage Stock Transfer Details')
 
-@section('style')
-<!-- Optional: Add any page-specific styles here -->
-@endsection
+
 <!-- Add this in <head> section of layouts/master.blade.php -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
@@ -68,6 +66,4 @@
 </div>
 @endsection
 
-@section('script')
-<!-- Optional: Add any custom scripts here -->
-@endsection
+

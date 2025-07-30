@@ -55,12 +55,7 @@
 	</div>
 </div>
 
-<!-- <div class="row mb-3">
-	<label for="uom_id" class="col-sm-2 col-form-label">Uom Id</label>
-	<div class="col-sm-10">
-		<input type = "text" class="form-control" name="uom_id" value="{{$purchasedetail->uom_id}}" id="uom_id" placeholder="Uom Id">
-	</div>
-</div> -->
+
 <div class="row mb-3">
 	<label for="price" class="col-sm-2 col-form-label">Price</label>
 	<div class="col-sm-10">

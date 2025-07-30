@@ -67,51 +67,6 @@ class MoneyReceiptController extends Controller
         }
     }
 
-
-    // public function show(string $id)
-    // {
-    //     try {
-    //         $receipt = MoneyReceipt::with('customer')->findOrFail($id);
-    //         $details = MoneyReceiptDetail::with(['property', 'project'])->where('money_receipt_id', $id)->get();
-
-    //         $items = $details->map(function ($item) {
-    //             return [
-    //                 'property' => [
-    //                     'title' => $item->property->title ?? 'N/A',
-    //                 ],
-    //                 'project' => [
-    //                     'name' => $item->project->name ?? 'N/A',
-    //                 ],
-    //                 'property_id' => $item->property_id,
-    //                 'project_id' => $item->project_id,
-    //                 'amount' => $item->amount,
-    //                 'discount' => $item->discount,
-    //             ];
-    //         });
-
-    //         return response()->json([
-    //             'id' => $receipt->id,
-    //             'customer' => $receipt->customer,
-    //             'company' => [
-    //                 'name' => 'Hami Corporation',
-    //                 'street_address' => '123 Street',
-    //                 'area' => 'Banani',
-    //                 'city' => 'Dhaka',
-    //             ],
-    //             'remark' => $receipt->remark,
-    //             'total_amount' => $receipt->total_amount,
-    //             'discount' => $receipt->discount,
-    //             'vat' => $receipt->vat,
-    //             'payment_method' => $receipt->payment_method,
-    //             'paid_amount' => $receipt->paid_amount,
-    //             'created_at' => $receipt->created_at,
-    //             'items' => $items,
-    //         ]);
-    //     } catch (\Exception $e) {
-    //         return response()->json(['error' => $e->getMessage()], 500);
-    //     }
-    // }
-
     public function show(string $id)
     {
         try {
