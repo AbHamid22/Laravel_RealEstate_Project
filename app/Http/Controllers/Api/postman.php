@@ -1,0 +1,14 @@
+{
+    "vendor_id":1,
+    "warehouse_id":1,
+    "purchase_total":23152,
+    "paid_amount":12345,
+    "status_id":5,
+    "discount":0,
+    "vat":0,
+    "items":[
+        {"product_id":3,"name":"Steel","qty":10,"uom_id":11,"price":10020,"item_discount":0,"item_vat":0},
+        {"product_id":4,"name":"Bricks","qty":1,"uom_id":7,"price":20,"item_discount":0,"item_vat":0},
+        {"product_id":5,"name":"Cement","qty":100,"uom_id":7,"price":600,"item_discount":0,"item_vat":0}
+    ]
+}
