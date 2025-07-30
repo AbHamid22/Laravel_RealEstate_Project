@@ -9,10 +9,6 @@ use Illuminate\Http\Request;
 
 class MoneyReceiptController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-
     public function index()
     {
 
@@ -24,14 +20,11 @@ class MoneyReceiptController extends Controller
     }
 
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    
     public function store(Request $request)
     {
         try {
-            // Optional: add validation here
-            // $request->validate([...]);
+     
 
             $moneyreceipt = new MoneyReceipt;
             $moneyreceipt->customer_id = $request->customer_id;
